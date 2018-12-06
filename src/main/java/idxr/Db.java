@@ -16,7 +16,7 @@ public class Db
         {
             // db parameters
             //String url = "jdbc:sqlite:C:/sqlite/db/chinook.db";
-            String url = "jdbc:sqlite::memory";
+            String url = "jdbc:sqlite::memory:";
             // create a connection to the database
             conn = DriverManager.getConnection(url);
             

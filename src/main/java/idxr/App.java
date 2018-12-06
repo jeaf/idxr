@@ -21,7 +21,7 @@ public class App
         switch (args.cmd)
         {
         case "parse":
-            System.out.println("Executing parse");
+            System.out.printf("Executing parse, db: %s\n", args.dbPath);
             Db db = new Db("abc");
             Connection c = db.connect();
             break;

@@ -3,6 +3,7 @@ apply plugin: 'java'
 dependencies
 {
     compile 'com.beust:jcommander:1.72'
+    compile 'org.xerial:sqlite-jdbc:3.25.2'
 }
 
 jar
