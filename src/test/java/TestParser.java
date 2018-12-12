@@ -9,8 +9,12 @@ public class TestParser
     public void test1()
     {
         Parser p = new Parser();
-        Map<String, Integer> m = p.parse("abc def AbC DEF dEf déf dèf dêf");
-        assertEquals(2, m.size());
+        String s = "abc def    AbC\nDEF dEf déf dèf dêf -,.!==2339i p";
+        Map<String, Integer> m = p.parse(s);
+        assertEquals(3, m.size());
+        assertTrue(m.containsKey("abc"));
+        assertTrue(m.containsKey("def"));
+        assertTrue(m.containsKey("2339i"));
     }
 }
 
