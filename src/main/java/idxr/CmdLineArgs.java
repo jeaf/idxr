@@ -13,6 +13,9 @@ public class CmdLineArgs
     public String dbPath = System.getProperty("user.home") + File.separator +
                            "idxr.db";
 
+    @Parameter(names = "--src", description = "Documents source")
+    public String src;
+
     @Parameter(names = "--help", help = true)
     public boolean help = false;
 }
