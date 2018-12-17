@@ -4,6 +4,7 @@ import com.beust.jcommander.JCommander;
 import java.nio.file.*;
 import java.sql.Connection;
 import java.util.logging.*;
+import javax.swing.*;
 
 public class App
 {
@@ -24,6 +25,16 @@ public class App
 
             switch (args.cmd)
             {
+            case "gui":
+                SwingUtilities.invokeLater(new Runnable()
+                {
+                    public void run()
+                    {
+                        JFrame frame = new idxr.gui.MainFrame();
+                        frame.setVisible(true);
+                    }
+                });
+                break;
             case "parse":
                 log.info(String.format("Executing parse, db: %s, src: %s",
                                        args.dbPath, args.src));
