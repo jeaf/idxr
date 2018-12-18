@@ -12,7 +12,9 @@ public class DirSource extends Source
 
     public Stream<Document> getDocuments() throws Exception
     {
-        return Files.walk(path).map((Path p) -> new FileDocument(p));
+        
+        return Files.walk(path).filter(p -> Files.isRegularFile(p))
+                               .map   (p -> new FileDocument(p)   );
     }
 
     private Path path;

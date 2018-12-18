@@ -6,6 +6,14 @@ public class FileDocument extends Document
 {
     public FileDocument(Path p)
     {
+        path = p;
     }
+
+    public String toString()
+    {
+        return path.toString();
+    }
+
+    private Path path;
 }
 

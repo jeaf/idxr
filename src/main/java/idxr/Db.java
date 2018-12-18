@@ -70,10 +70,10 @@ public class Db
         stmt.execute(sql);
         sql =
             "CREATE TABLE IF NOT EXISTS match("                              +
-            "word   TEXT NOT NULL,"                                          +
-            "doc_id INTEGER NOT NULL REFERENCES doc(id),"                    +
-            "flags  INTEGER NOT NULL DEFAULT 0,"                             +
-            "score  INTEGER NOT NULL DEFAULT 0,"                             +
+            "word        TEXT NOT NULL,"                                     +
+            "doc_id      INTEGER NOT NULL REFERENCES doc(id),"               +
+            "path_score  INTEGER NOT NULL DEFAULT 0,"                        +
+            "text_score  INTEGER NOT NULL DEFAULT 0,"                        +
             "PRIMARY KEY (word, doc_id)) WITHOUT ROWID;";
         stmt = c.createStatement();
         stmt.execute(sql);
