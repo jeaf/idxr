@@ -1,0 +1,12 @@
+def data
+abc
+delta
+             DELTA
+
+
+             DEF
+4 44 444 4a4 p
+
+
+             ,.,..,.,.,.,.,.,.,
+déf
