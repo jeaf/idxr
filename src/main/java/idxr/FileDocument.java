@@ -2,7 +2,7 @@ package idxr;
 
 import java.nio.file.*;
 
-public class FileDocument extends Document
+public abstract class FileDocument extends Document
 {
     public FileDocument(Path p)
     {
@@ -14,6 +14,6 @@ public class FileDocument extends Document
         return path.toString();
     }
 
-    private Path path;
+    protected Path path;
 }
 

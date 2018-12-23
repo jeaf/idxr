@@ -5,6 +5,8 @@ import static net.gcardone.junidecode.Junidecode.*;
 
 public abstract class Document
 {
+    public abstract IndexData index() throws Exception;
+
     public static Map<String, Integer> indexText(String text)
     {
         Hashtable<String, Integer> h = new Hashtable<String, Integer>();
