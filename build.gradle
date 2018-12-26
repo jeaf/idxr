@@ -5,6 +5,7 @@ dependencies
 {
     compile 'com.beust:jcommander:1.72'
     compile 'com.miglayout:miglayout:3.7.4'
+    compile 'commons-io:commons-io:2.6'
     compile 'net.gcardone.junidecode:junidecode:0.4.1'
     compile 'org.xerial:sqlite-jdbc:3.25.2'
     testCompile 'junit:junit:4.12'

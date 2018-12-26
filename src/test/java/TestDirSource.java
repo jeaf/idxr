@@ -14,7 +14,7 @@ public class TestDirSource
         Path f = Paths.get(loader.getResource("testdir1/abc def.txt").toURI());
         Source s = new DirSource(f.getParent());
         Document[] docs = s.getDocuments().toArray(Document[]::new);
-        assertEquals(5, docs.length);
+        assertEquals(6, docs.length);
         Map<String, Integer> types = new Hashtable<String, Integer>();
         for (Document doc : docs)
         {
@@ -22,7 +22,7 @@ public class TestDirSource
         }
         assertEquals(Integer.valueOf(1), types.get("idxr.BinaryFileDocument"));
         assertEquals(Integer.valueOf(2), types.get("idxr.ImageFileDocument"));
-        assertEquals(Integer.valueOf(1), types.get("idxr.TextFileDocument"));
+        assertEquals(Integer.valueOf(2), types.get("idxr.TextFileDocument"));
         assertEquals(Integer.valueOf(1), types.get("idxr.VideoFileDocument"));
     }
 }
