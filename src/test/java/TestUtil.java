@@ -5,6 +5,23 @@ import static org.junit.Assert.*;
 public class TestUtil
 {
     @Test
+    public void testMd5() throws Exception
+    {
+        // Empty
+        String exp = "d41d8cd98f00b204e9800998ecf8427e";
+        byte[] h = Util.getMd5(Util.hexStringToByteArray(""));
+        assertEquals(exp, Util.byteArrayToHexString(h));
+    }
+
+    @Test
+    public void testByteArrayToHexString() throws Exception
+    {
+        byte[] b = {(byte)5, (byte)126, (byte)243};
+        String exp = "057ef3";
+        assertEquals(exp, Util.byteArrayToHexString(b));
+    }
+
+    @Test
     public void test1() throws Exception
     {
         byte[] b = Util.hexStringToByteArray("abcd");

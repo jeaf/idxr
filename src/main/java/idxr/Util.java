@@ -22,6 +22,16 @@ public class Util
         return b;
     }
 
+    public static String byteArrayToHexString(byte[] buf)
+    {
+        String s = "";
+        for (byte b : buf)
+        {
+            s += String.format("%02x", b);
+        }
+        return s;
+    }
+
     public static byte[] getMd5(byte[] buf) throws Exception
     {
         byte[] hexMd5 = MessageDigest.getInstance("MD5").digest(buf);
