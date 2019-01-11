@@ -1,4 +1,5 @@
 import idxr.*;
+import java.nio.charset.*;
 import org.junit.*;
 import static org.junit.Assert.*;
 
@@ -8,8 +9,24 @@ public class TestUtil
     public void testMd5() throws Exception
     {
         // Empty
+        String s   = "";
+        byte[] buf = s.getBytes(StandardCharsets.US_ASCII);
         String exp = "d41d8cd98f00b204e9800998ecf8427e";
-        byte[] h = Util.getMd5(Util.hexStringToByteArray(""));
+        byte[] h = Util.getMd5(buf);
+        assertEquals(exp, Util.byteArrayToHexString(h));
+
+        // Basic 1
+        s   = "The quick brown fox jumps over the lazy dog";
+        buf = s.getBytes(StandardCharsets.US_ASCII);
+        exp = "9e107d9d372bb6826bd81d3542a419d6";
+        h = Util.getMd5(buf);
+        assertEquals(exp, Util.byteArrayToHexString(h));
+
+        // Basic 2
+        s   = "The quick brown fox jumps over the lazy dog.";
+        buf = s.getBytes(StandardCharsets.US_ASCII);
+        exp = "e4d909c290d0fb1ca068ffaddf22cbd0";
+        h = Util.getMd5(buf);
         assertEquals(exp, Util.byteArrayToHexString(h));
     }
 

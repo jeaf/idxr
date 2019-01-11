@@ -21,7 +21,7 @@ public class TestTextFileDocument
         MessageDigest md = MessageDigest.getInstance("MD5");
         byte[] md5 = md.digest(buf);
         String expected = "933222b19ff3e7ea5f65517ea1f7d57e";
-        String actual = String.format("%032x", new BigInteger(1, md.digest()));
+        String actual = String.format("%032x", new BigInteger(1, md5));
         assertEquals(expected, actual);
     }
 
@@ -33,7 +33,7 @@ public class TestTextFileDocument
         Document d = new TextFileDocument(f);
         IndexData idxDat = d.index();
         byte[] expectedMd5 = Util.hexStringToByteArray("933222b19ff3e7ea5f65517ea1f7d57e");
-        assertEquals(expectedMd5, idxDat.md5);
+        assertArrayEquals(expectedMd5, idxDat.md5);
     }
 }
 
